@@ -4,7 +4,7 @@ import axios from 'axios';
 
 interface Pokemon {
   name: string;
-  image: string; // URL do GIF animado
+  image: string; 
 }
 
 export default function Pokequiz() {
@@ -13,21 +13,18 @@ export default function Pokequiz() {
   const [correctAnswer, setCorrectAnswer] = useState<string>('');
   const [score, setScore] = useState<number>(0);
 
-  // Função para buscar um Pokémon aleatório
   const fetchPokemon = async () => {
-    const randomId = Math.floor(Math.random() * 151) + 1; // Limitado aos 151 primeiros Pokémon
+    const randomId = Math.floor(Math.random() * 151) + 1; 
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
     const data = response.data;
 
-    // Pokémon correto com GIF animado da geração V
     const correctPokemon: Pokemon = {
       name: data.name,
-      image: data.sprites.versions['generation-v']['black-white'].animated.front_default || data.sprites.front_default, // Fallback para sprite estático
+      image: data.sprites.versions['generation-v']['black-white'].animated.front_default || data.sprites.front_default,
     };
     setPokemon(correctPokemon);
     setCorrectAnswer(data.name);
 
-    // Gerar opções de resposta (incluindo a correta)
     const allOptions: string[] = [data.name];
     while (allOptions.length < 4) {
       const randomOptionId = Math.floor(Math.random() * 151) + 1;
@@ -37,31 +34,28 @@ export default function Pokequiz() {
         allOptions.push(optionName);
       }
     }
-    // Embaralhar as opções
     const shuffledOptions: string[] = allOptions.sort(() => Math.random() - 0.5);
     setOptions(shuffledOptions);
   };
 
-  // Carregar o primeiro Pokémon ao iniciar
   useEffect(() => {
     fetchPokemon();
   }, []);
 
-  // Verificar resposta
   const checkAnswer = (selectedOption: string) => {
     if (selectedOption === correctAnswer) {
-      setScore(score + 1);
+      setScore(score + 1*100);
       alert('Correto!');
     } else {
       alert(`Errado! O correto era ${correctAnswer}`);
     }
-    fetchPokemon(); // Carregar próxima pergunta
+    fetchPokemon(); 
   };
 
   if (!pokemon) {
     return (
       <View style={styles.container}>
-        <Text>Carregando...</Text>
+        <Text>Encontrando pokemon...</Text>
       </View>
     );
   }
@@ -70,7 +64,7 @@ export default function Pokequiz() {
     <View style={styles.container}>
       <Text style={styles.score}>Pontuação: {score}</Text>
       <Image source={{ uri: pokemon.image }} style={styles.image} />
-      <Text style={styles.question}>Qual é este Pokémon?</Text>
+      <Text style={styles.question}>Qual não é esse pokemon?</Text>
       {options.map((option, index) => (
         <Button key={index} title={option} onPress={() => checkAnswer(option)} />
       ))}
