@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { View, Text, TouchableOpacity } from "react-native";
 
 export default function Index({ navigation }: { navigation: any }) {
@@ -31,3 +32,92 @@ export default function Index({ navigation }: { navigation: any }) {
     </View>
   );
 }
+=======
+import { View, Text, Button, StyleSheet } from "react-native";
+
+export default function Index({ navigation }: { navigation: any }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Menu Principal</Text>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 1"
+          onPress={() => navigation.navigate('Ex1')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 2"
+          onPress={() => navigation.navigate('Ex2')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 3"
+          onPress={() => navigation.navigate('Ex3')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 4"
+          onPress={() => navigation.navigate('Ex4')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 5"
+          onPress={() => navigation.navigate('Ex5')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 6"
+          onPress={() => navigation.navigate('Ex6')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 7"
+          onPress={() => navigation.navigate('Ex7')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 8"
+          onPress={() => navigation.navigate('Ex8')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="Ir para Exercício 9"
+          onPress={() => navigation.navigate('Ex9')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button 
+          title="PokemonGPT"
+          onPress={() => navigation.navigate('Pokequiz')}
+        />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 80,
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 40,
+  },
+  buttonContainer: {
+    width: '80%',
+    marginBottom: 20,
+  },
+});
+>>>>>>> Stashed changes
