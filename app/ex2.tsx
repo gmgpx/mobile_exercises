@@ -5,9 +5,10 @@ export default function Ex2() {
     <View style={styles.container}>
       <View style={styles.card}>
         <Image
+          source={{ uri: 'https://avatars.githubusercontent.com/u/158373467?v=4' }}
           style={styles.avatar}
         />
-        <Text style={styles.name}>Kauan Izidoro</Text>
+        <Text style={styles.name}>Gustavo Monteiro</Text>
         <Text style={styles.role}>Software Engineer</Text>
       </View>
     </View>

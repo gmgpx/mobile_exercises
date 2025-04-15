@@ -12,8 +12,6 @@ export default function Index({ navigation }: { navigation: any }) {
     { title: "Exercício 7", screen: "ex7" },
     { title: "Exercício 8", screen: "ex8" },
     { title: "Exercício 9", screen: "ex9" },
-    { title: "Login", screen: "ex_login" },
-    { title: "Perfil", screen: "ex_perfil" },
     { title: "To Do List", screen: "ex_todo" },
     { title: "Pokequiz", screen: "Pokequiz" },
   ];
@@ -21,7 +19,7 @@ export default function Index({ navigation }: { navigation: any }) {
   return (
     <View className="flex-1 justify-center items-center px-8 bg-gray-100">
       <Text className="text-4xl font-bold text-zinc-800 mb-4 text-center">
-        Lista de Atividades      
+        Gustavo Monteiro     
       </Text>
 
       <View className="w-full gap-4">

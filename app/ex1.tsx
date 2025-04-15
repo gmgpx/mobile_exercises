@@ -4,7 +4,7 @@ export default function Ex1() {
   return (
     <View style={styles.container}>
       <Image />
-      <Text style={styles.name}>Kauan Izidoro</Text>
+      <Text style={styles.name}>Gustavo Monteiro</Text>
       <Text style={styles.role}>Software Engineer</Text>
     </View>
   );
@@ -15,14 +15,15 @@ const styles = StyleSheet.create({
     flex: 1, 
     justifyContent: "center",
     alignItems: "center",    
-    backgroundColor: "#fff",
+    backgroundColor: "indigo",
   },
   name: {
     fontSize: 24,
     fontWeight: "bold",
+    color: "white",
   },
   role: {
     fontSize: 18,
-    color: "gray",
+    color: "white",
   },
 });

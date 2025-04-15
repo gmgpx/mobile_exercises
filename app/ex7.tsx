@@ -1,91 +1,43 @@
-import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, ScrollView } from 'react-native';
 
-export default function Ex7() {
+export default function ExPerfil() {
   return (
-    <View style={styles.container}>
-      <Image
-        source={{ uri: "https://i.imgur.com/1n7f4U4.jpg" }} // imagem de capa (Sorocaba)
-        style={styles.capa}
-      />
-      <View style={styles.avatarContainer}>
+    <ScrollView className="flex-1 bg-white">
+
+      <View className="h-40 bg-gray-200">
         <Image
-          source={{ uri: "https://randomuser.me/api/portraits/men/32.jpg" }} // avatar
-          style={styles.avatar}
+          source={{ uri: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600' }}
+          className="w-full h-full"
+          resizeMode="cover"
         />
       </View>
-      <View style={styles.conteudo}>
-        <Text style={styles.nome}>João Silva</Text>
-        <Text style={styles.bio}>
-          Desenvolvedor apaixonado por tecnologia e inovação. Sempre em busca de aprender mais!
-        </Text>
-        <View style={styles.stats}>
-          <View style={styles.statItem}>
-            <Text style={styles.statLabel}>Meus Posts</Text>
-            <Text style={styles.statValue}>5 Posts</Text>
-          </View>
-          <View style={styles.statItem}>
-            <Text style={styles.statLabel}>Seguidores</Text>
-            <Text style={styles.statValue}>230 Seguidores</Text>
-          </View>
-          <View style={styles.statItem}>
-            <Text style={styles.statLabel}>Seguindo</Text>
-            <Text style={styles.statValue}>180 Seguindo</Text>
-          </View>
+
+      <View className="ml-12 -mt-12">
+        <Image
+          source={{ uri: 'https://avatars.githubusercontent.com/u/158373467?v=4' }}
+          className="w-24 h-24 rounded-full border-4 border-white"
+        />
+      </View>
+
+      <View className="items-start ml-12 mt-4">
+        <Text className="text-xl font-bold text-gray-800">Gustavo Monteiro</Text>
+        <Text className="text-gray-600 italic">Desenvolvedor Full-Stack</Text>
+      </View>
+
+      <View className="flex-row justify-around mt-6 px-6">
+        <View className="items-center">
+          <Text className="text-lg font-semibold text-gray-800">152</Text>
+          <Text className="text-sm text-gray-500">Posts</Text>
+        </View>
+        <View className="items-center">
+          <Text className="text-lg font-semibold text-gray-800">12K</Text>
+          <Text className="text-sm text-gray-500">Seguidores</Text>
+        </View>
+        <View className="items-center">
+          <Text className="text-lg font-semibold text-gray-800">1.1K</Text>
+          <Text className="text-sm text-gray-500">Seguindo</Text>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-  capa: {
-    width: "100%",
-    height: 150,
-  },
-  avatarContainer: {
-    position: "absolute",
-    top: 110,
-    left: 20,
-    borderRadius: 50,
-    borderWidth: 4,
-    borderColor: "#fff",
-    overflow: "hidden",
-  },
-  avatar: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-  },
-  conteudo: {
-    marginTop: 60,
-    paddingHorizontal: 20,
-  },
-  nome: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 4,
-  },
-  bio: {
-    fontSize: 14,
-    color: "#333",
-    marginBottom: 16,
-  },
-  stats: {
-    flexDirection: "column",
-    gap: 16,
-  },
-  statItem: {
-    marginBottom: 8,
-  },
-  statLabel: {
-    fontWeight: "bold",
-  },
-  statValue: {
-    color: "#555",
-  },
-});

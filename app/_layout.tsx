@@ -9,8 +9,6 @@ import ex6 from './ex6';
 import ex7 from './ex7';
 import ex8 from './ex8';
 import ex9 from './ex9';
-import exlogin from './ex_login';
-import experfil from './ex_perfil';
 import extodo from './ex_todo';
 import Pokequiz from './ex_pokequiz';
 
@@ -29,8 +27,6 @@ export default function App() {
       <Stack.Screen name="ex7" component={ex7} />
       <Stack.Screen name="ex8" component={ex8} />
       <Stack.Screen name="ex9" component={ex9} />
-      <Stack.Screen name="ex_login" component={exlogin} />
-      <Stack.Screen name="ex_perfil" component={experfil} />
       <Stack.Screen name="ex_todo" component={extodo} />
       <Stack.Screen name="Pokequiz" component={Pokequiz} />
     </Stack.Navigator>
