@@ -14,6 +14,6 @@ export default function PaginaA() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  title: { fontSize: 24, marginBottom: 20 },
-  image: { width: 200, height: 200 },
+  title: { fontSize: 32, marginBottom: 40, color: 'royalblue' },
+  image: { width: 200, height: 200, borderRadius: 10 },
 });

@@ -17,7 +17,7 @@ export default function PaginaC() {
   const fetchFact = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random?language=pt');
+      const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random?language=en');
       const data: Fact = await response.json();
       setFact(data);
     } catch (error) {
@@ -34,7 +34,12 @@ export default function PaginaC() {
       {loading && <ActivityIndicator size="large" style={styles.loader} />}
       {fact && !loading && (
         <View style={styles.factBox}>
-          <Text style={styles.factText}>{fact.text}</Text>
+          <Text style={styles.factText}>ID: {fact.id}</Text>
+          <Text style={styles.factText}>Fact: {fact.text}</Text>
+          <Text style={styles.factText}>Source : {fact.source}</Text>
+          <Text style={styles.factText}>URL: {fact.source_url}</Text>
+          <Text style={styles.factText}>Language: {fact.language}</Text>
+          <Text style={styles.factText}>Link: {fact.permalink}</Text>
         </View>
       )}
     </View>
@@ -42,9 +47,9 @@ export default function PaginaC() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, justifyContent: 'center' },
-  title: { fontSize: 24, textAlign: 'center', marginBottom: 20 },
-  loader: { marginTop: 20 },
-  factBox: { marginTop: 20, backgroundColor: '#eee', padding: 15, borderRadius: 10 },
-  factText: { fontSize: 16, textAlign: 'center' },
+  container: { flex: 1, padding: 24, justifyContent: 'center' },
+  title: { fontSize: 32, textAlign: 'center', marginBottom: 40, color: 'royalblue' },
+  loader: { marginTop: 24 },
+  factBox: { marginTop: 24, backgroundColor: 'snow', padding: 16, borderRadius: 16 },
+  factText: { fontSize: 16, marginVertical: 8, textAlign: 'center' },
 });
