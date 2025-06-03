@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 export default function PaginaA() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Página A</Text>
+      <Text style={styles.title}>Projeto Prático Expo</Text>
       <Image
         source={{ uri: 'https://avatars.githubusercontent.com/u/158373467?v=4' }}
         style={styles.image}
